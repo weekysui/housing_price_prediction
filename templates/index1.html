@@ -1,0 +1,70 @@
+<div class="container">
+        <div class="jumbotron text-center">
+      <h2>Home Price Prediction</h2>
+        </div>            
+        <div class="row">
+            <div class="col-md-12">
+            <form action="/calculate" method="post">    
+                <!-- {{ form.csrf_token }} -->
+                <table class="table table-condensed borderless">
+                    <tr>
+                        <td>{{form.area.label}}:</td>
+                        <td>{{form.area()}} </td>
+                    </tr>
+                    <tr>
+                        <td>{{form.yearBuilt.label}}:</td>
+                        <td>{{form.yearBuilt()}} </td>
+                    </tr>
+                    <tr>
+                      <td>{{form.buildingType.label}}:</td>
+                      <td>{{form.buildingType()}}</td>
+                    </tr>
+                    <tr>
+                    <tr>
+                      <td>{{form.houseStyle.label}}:</td>
+                      <td>{{form.houseStyle()}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{form.bedrooms.label}}:</td>
+                        <td>{{form.bedrooms()}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{form.bathrooms.label}} (if available):</td>
+                        <td>{{form.bathrooms()}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{form.garage.label}}:</td>
+                        <td>{{form.garage()}} </td>
+                    </tr>
+                    <tr>
+                      <td>{{form.centralAir.label}}:</td>
+                      <td>{{form.centralAir()}}</td>
+                    </tr>
+                    <tr>
+                    <tr>
+                      <td>{{form.overallQuality.label}}:</td>
+                      <td>{{form.overallQuality()}}</td>
+                    </tr>
+                  </table>
+                  <p><input type="submit" class="btn btn-primary" value="House Prediction"></p>
+                </form>
+                <div class="prediction">
+                  <p> The predicted house price is: $<strong>{{prediction}}</strong> </p>
+                </div>
+                
+                </div>
+                  </div>
+                </div>
+            
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                 <div class="alert alert-warning">
+                   <ul>
+                    {% for message in messages %}
+                        <li>{{message}}</li>
+                    {% endfor %}
+                   </ul>
+                    </div>
+                {% endif %}
+                {% endwith %}
+            

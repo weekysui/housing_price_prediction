@@ -14,3 +14,4 @@ Keras==2.0.6
 spicy
 scikit-learn
 pandas
+flask_wtf

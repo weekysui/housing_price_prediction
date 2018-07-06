@@ -11,7 +11,8 @@ numpy==1.13.1
 h5py==2.7.0
 tensorflow==1.1.0
 Keras==2.0.6
-spicy
+scipy
 scikit-learn
 pandas
 flask_wtf
+dill
